@@ -88,92 +88,33 @@
 }
 
 #main-content {
+    max-width: 800px;
+    max-height: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#main-content h1 {
     text-align: center;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-#content-section {
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+#main-content p{
+    display: flex;
+    text-align: center;
+    padding: 30px;
 }
-#content-section ul {
-    list-style: none;
-    margin: 0;
+#main-content ul{
+    list-style-type: none;
+    text-align: center;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
 }
-#content-section li {
-    margin: 0;
-}
-#content-section iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    height: auto;
+#main-content img{
     display: block;
-}
-#content-section h1 {
-    text-align: center;
-}
-
-#social-media-section {
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-#social-media-section ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 10px;
-}
-
-#followers-section {
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-#followers-section ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 10px;
-}
-#followers-section h1, #followers-section p{
-    text-align: center;
-}
-
-#followers-section img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 6px;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    margin: auto;
 }
 
 #footer-section {
