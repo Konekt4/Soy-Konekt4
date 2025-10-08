@@ -145,7 +145,7 @@ html { font-size: 16px; }
     height: auto;
     display: block;
 }
-#content-section h1 {
+#content-section h2 {
     text-align: center;
 }
 
@@ -159,7 +159,7 @@ html { font-size: 16px; }
     box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
-#social-media-section h1{
+#social-media-section h2{
     text-align: center;
 }
 #social-media-section ul {
@@ -189,7 +189,7 @@ html { font-size: 16px; }
     grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
     gap: 0.625rem; /* 10px */
 }
-#followers-section h1, #followers-section p{
+#followers-section h2, #followers-section p{
     text-align: center;
 }
 
