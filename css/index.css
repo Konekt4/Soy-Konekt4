@@ -44,7 +44,7 @@ html { font-size: 16px; }
 
 #header .logo {
     height: auto;
-    width: min(4.25rem);
+    width: 4.25rem;
     position: absolute;
     left: var(--header-hpad);
     top: 50%;
@@ -65,7 +65,7 @@ html { font-size: 16px; }
 }
 
 #sidebar {
-    margin-top: 12.5rem; /* 200px */
+    margin-top: 8rem;
     margin-right: 1.875rem; /* 30px */
     background-color: #f4f4f4;
     padding: 0.9375rem; /* 15px */
@@ -92,6 +92,18 @@ html { font-size: 16px; }
     color: #8600be;
 }
 
+#sidebar .social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+}
+#sidebar .social-links a img {
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
 #main-content {
     text-align: center;
     max-width: var(--content-max-width);
@@ -107,7 +119,6 @@ html { font-size: 16px; }
     display: block;
     border-radius: 0.375rem; /* 6px */
 }
-
 #content-section {
     margin-bottom: 2.5rem; /* 40px */
     max-width: var(--content-max-width);
@@ -148,6 +159,9 @@ html { font-size: 16px; }
     border-radius: 0.5rem;
     box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
     overflow: hidden;
+}
+#social-media-section h1{
+    text-align: center;
 }
 #social-media-section ul {
     list-style: none;
@@ -198,7 +212,6 @@ html { font-size: 16px; }
     text-align: center;
 }
 
-/* Responsive adjustments */
 @media (max-width: 62rem) { /* ~992px */
     :root {
         --sidebar-offset: 0;
