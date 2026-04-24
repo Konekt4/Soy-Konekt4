@@ -11,8 +11,9 @@
             mirrorUrl: 'https://r.jina.ai/http://socialblade.com/tiktok/user/'
         },
         instagram: {
-            enabled: false,
-            username: 'pendiente'
+            enabled: true,
+            username: 'konekt.4',
+            mirrorUrl: 'https://r.jina.ai/http://socialblade.com/instagram/user/'
         },
         twitch: {
             enabled: false,
@@ -66,7 +67,21 @@
     }
 
     async function fetchInstagramFollowers() {
-        throw new Error('Plantilla Instagram pendiente.');
+        const url = `${followerSources.instagram.mirrorUrl}${followerSources.instagram.username}`;
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error('No se pudo consultar Instagram.');
+        }
+
+        const html = await response.text();
+        const match = html.match(/followers\s+([0-9][0-9\.,KMB]*)/i);
+
+        if (!match || !match[1]) {
+            throw new Error('No se encontro el contador de seguidores de Instagram.');
+        }
+
+        return normalizeCount(match[1]);
     }
 
     async function fetchTwitchFollowers() {
@@ -112,6 +127,16 @@
                     if (youtubeBtn) {
                         youtubeBtn.setAttribute('data-followers', `Suscriptores\n${count}`);
                     }
+                } else if (network === 'tiktok') {
+                    const tiktokBtn = document.querySelector('.btn.tiktok');
+                    if (tiktokBtn) {
+                        tiktokBtn.setAttribute('data-followers', `Seguidores\n${count}`);
+                    }
+                } else if (network === 'instagram') {
+                    const instagramBtn = document.querySelector('.btn.instagram');
+                    if (instagramBtn) {
+                        instagramBtn.setAttribute('data-followers', `Seguidores\n${count}`);
+                    }
                 }
             } catch (error) {
                 const message = error && error.message ? error.message : 'Error desconocido.';
@@ -121,6 +146,16 @@
                     const youtubeBtn = document.querySelector('.btn.youtube');
                     if (youtubeBtn) {
                         youtubeBtn.setAttribute('data-followers', 'Suscriptores\n--');
+                    }
+                } else if (network === 'tiktok') {
+                    const tiktokBtn = document.querySelector('.btn.tiktok');
+                    if (tiktokBtn) {
+                        tiktokBtn.setAttribute('data-followers', 'Seguidores\n--');
+                    }
+                } else if (network === 'instagram') {
+                    const instagramBtn = document.querySelector('.btn.instagram');
+                    if (instagramBtn) {
+                        instagramBtn.setAttribute('data-followers', 'Seguidores\n--');
                     }
                 }
             }
