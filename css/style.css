@@ -112,6 +112,30 @@ body::before {
     gap: 12px;
 }
 
+.youtube-row {
+    display: grid;
+    grid-template-columns: minmax(180px, 210px) minmax(0, 1fr);
+    gap: 10px;
+    align-items: stretch;
+}
+
+.twitch-row {
+    display: grid;
+    grid-template-columns: minmax(180px, 210px) minmax(0, 1fr);
+    gap: 10px;
+    align-items: stretch;
+}
+
+.youtube-row .btn.youtube {
+    width: 100%;
+    min-width: 180px;
+}
+
+.twitch-row .btn.twitch {
+    width: 100%;
+    min-width: 180px;
+}
+
 .btn {
     text-decoration: none;
     color: white;
@@ -188,4 +212,192 @@ body::before {
 
 .btn:active {
     transform: scale(0.98);
+}
+
+.youtube-status {
+    --status-meta-size: clamp(9px, 1.8vw, 11px);
+    --status-title-size: clamp(10px, 2vw, 12px);
+    --status-title-lines: 3;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 2px solid #8600be;
+    background: #ffffff;
+    color: #4a0a69;
+    min-width: 0;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    justify-content: center;
+    column-gap: 10px;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.youtube-status-meta {
+    font-size: var(--status-meta-size);
+    line-height: 1.15;
+    white-space: nowrap;
+    opacity: 0.95;
+}
+
+.youtube-status-title {
+    font-size: var(--status-title-size);
+    line-height: 1.2;
+    font-weight: bold;
+    display: block;
+    overflow: hidden;
+    max-height: calc(1.2em * var(--status-title-lines));
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.youtube-status-thumb {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    width: 180px;
+    aspect-ratio: 16 / 9;
+    transform: translate(-50%, 8px);
+    border: 2px solid #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+    background: #181818;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 40;
+}
+
+.youtube-status-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.youtube-status:hover .youtube-status-thumb,
+.youtube-status:focus-visible .youtube-status-thumb {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.youtube-status.loading {
+    opacity: 0.8;
+}
+
+.twitch-schedule {
+    --schedule-meta-size: clamp(9px, 1.8vw, 11px);
+    --schedule-time-size: clamp(10px, 2vw, 12px);
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 2px solid #8600be;
+    background: #f8f1ff;
+    color: #4a0a69;
+    min-width: 0;
+    width: 100%;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    column-gap: 8px;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    cursor: default;
+}
+
+.twitch-schedule-meta {
+    font-size: var(--schedule-meta-size);
+    line-height: 1.15;
+    white-space: normal;
+    max-width: 76px;
+    opacity: 0.95;
+}
+
+.twitch-schedule-time {
+    font-size: var(--schedule-time-size);
+    line-height: 1.2;
+    font-weight: bold;
+    text-align: center;
+    justify-self: stretch;
+    width: 100%;
+    max-width: none;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.twitch-schedule.loading {
+    opacity: 0.9;
+}
+
+.twitch-schedule[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translate(-50%, 8px);
+    width: min(290px, 92vw);
+    background: rgba(24, 24, 24, 0.96);
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    padding: 8px 10px;
+    font-size: 11px;
+    line-height: 1.35;
+    z-index: 45;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+    text-align: justify;
+    text-align-last: center;
+    hyphens: auto;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.twitch-schedule[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.youtube-status.is-new {
+    background: #eaffea;
+    border-color: #1f9f3a;
+    color: #106322;
+}
+
+.youtube-status.is-old,
+.youtube-status.error {
+    background: #f5eafd;
+    border-color: #9f71bf;
+    color: #5d2e7a;
+}
+
+@media (max-width: 560px) {
+    .youtube-row {
+        grid-template-columns: 1fr;
+    }
+
+    .twitch-row {
+        grid-template-columns: 1fr;
+    }
+
+    .youtube-status {
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: minmax(96px, auto) minmax(0, 1fr);
+    }
+
+    .twitch-schedule {
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: minmax(96px, auto) minmax(0, 1fr);
+    }
 }
