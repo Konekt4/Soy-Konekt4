@@ -141,10 +141,9 @@ body::before {
     filter: brightness(0) invert(1);
 }
 
-.btn.facebook .btn-icon,
-.btn.twitch .btn-icon,
-.btn.youtube .btn-icon {
-    filter: sepia(1) hue-rotate(260deg) saturate(1.2) brightness(0.9);
+.btn.twitch .btn-icon {
+    width: 26px;
+    height: 26px;
 }
 
 .btn:hover {
