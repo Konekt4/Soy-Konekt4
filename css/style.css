@@ -49,6 +49,11 @@ body::before {
     z-index: -1;
 }
 
+.panel-stack {
+    position: relative;
+    width: min(100%, 520px);
+}
+
 .card-container {
     display: flex;
     flex-direction: column;
@@ -62,6 +67,94 @@ body::before {
     max-width: 500px;
     box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
     position: relative;
+    transition: none;
+}
+
+.back-panel {
+    position: absolute;
+    top: 18px;
+    left: 38px;
+    width: 100%;
+    min-height: 620px;
+    background: linear-gradient(180deg, #d8d8d8 0%, #bdbdbd 100%);
+    opacity: 0.95;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.25);
+    z-index: 0;
+}
+
+.panel-stack-hint {
+    position: absolute;
+    right: -45px;
+    top: 44%;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    background: #c9c9c9;
+    border: none;
+    color: #000000;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 10px 12px;
+    border-radius: 12px;
+    white-space: nowrap;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: none;
+    z-index: 3;
+}
+
+
+
+.main-panel {
+    z-index: 1;
+}
+
+.panel-stack:not(.is-secondary-active) .back-panel {
+    cursor: pointer;
+}
+
+.panel-stack:not(.is-secondary-active) .main-panel {
+    cursor: default;
+}
+
+.panel-stack:not(.is-secondary-active) .back-panel a,
+.panel-stack:not(.is-secondary-active) .back-panel button,
+.panel-stack:not(.is-secondary-active) .back-panel input,
+.panel-stack:not(.is-secondary-active) .back-panel textarea,
+.panel-stack:not(.is-secondary-active) .back-panel select,
+.panel-stack:not(.is-secondary-active) .back-panel label {
+    pointer-events: none;
+}
+
+.panel-stack.is-secondary-active .back-panel {
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    opacity: 1;
+    z-index: 2;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+    cursor: default;
+}
+
+.panel-stack.is-secondary-active .main-panel {
+    top: 18px;
+    left: 38px;
+    background: linear-gradient(180deg, #d8d8d8 0%, #bdbdbd 100%);
+    opacity: 0.95;
+    z-index: 1;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.panel-stack.is-secondary-active .main-panel a,
+.panel-stack.is-secondary-active .main-panel button,
+.panel-stack.is-secondary-active .main-panel input,
+.panel-stack.is-secondary-active .main-panel textarea,
+.panel-stack.is-secondary-active .main-panel select,
+.panel-stack.is-secondary-active .main-panel label {
+    pointer-events: none;
 }
 
 .profile-circle {
@@ -210,8 +303,14 @@ body::before {
     }
 }
 
-.btn:active {
-    transform: scale(0.98);
+.btn.deadlock {
+    background: #efdebf;
+    border-color: #efdebf;
+    color: #333333;
+}
+
+.btn.deadlock .btn-icon {
+    filter: brightness(0) saturate(100%);
 }
 
 .youtube-status {

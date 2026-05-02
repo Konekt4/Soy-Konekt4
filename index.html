@@ -9,39 +9,60 @@
 </head>
 <body>
 
-    <div class="card-container">
-        
-        <div class="profile-circle">
-            <img src="img/Logo.png" alt="Rupy" class="oc-image">
-        </div>
-
-        <div class="info-section">
-            <h1>Mis redes</h1>
-            <h1>^^</h1>
-            <p class="description">Hago videos sobre Warframe y me dicen Waldo</p>
-        </div>
-
-        <div class="links-section">
-            <a href="https://discord.gg/s8keXGdTkq" target="_blank" rel="noopener noreferrer" class="btn discord"><img src="img/Discord.png" alt="Discord" class="btn-icon">Discord</a>
-            <div class="youtube-row">
-                <a href="https://www.youtube.com/@konekt4" target="_blank" rel="noopener noreferrer" class="btn youtube"><img src="img/Youtube.png" alt="YouTube" class="btn-icon">YouTube</a>
-                <a id="youtube-status" class="youtube-status loading" href="https://www.youtube.com/@konekt4/videos" target="_blank" rel="noopener noreferrer"><span class="youtube-status-meta">Cargando<br>--</span><span class="youtube-status-title">Buscando video...</span></a>
+    <div class="panel-stack">
+        <div class="card-container back-panel" aria-hidden="true">
+            <div class="profile-circle">
+                <img src="img/Rem.png" alt="Rem" class="oc-image">
             </div>
-            <a href="https://www.tiktok.com/@konekt4" target="_blank" rel="noopener noreferrer" class="btn tiktok"><img src="img/TikTok.png" alt="TikTok" class="btn-icon">TikTok</a>
-            <a href="https://www.instagram.com/konekt.4/" target="_blank" rel="noopener noreferrer" class="btn instagram"><img src="img/Instagram.png" alt="Instagram" class="btn-icon">Instagram</a>
-            <div class="twitch-row">
-                <span id="twitch-schedule" class="twitch-schedule loading"><span class="twitch-schedule-meta">Martes</span><span class="twitch-schedule-time">9:00 pm - 10:30 pm (Mexico)</span></span>
-                <a href="https://www.twitch.tv/konekt4" target="_blank" rel="noopener noreferrer" class="btn twitch"><img src="img/Twitch.png" alt="Twitch" class="btn-icon">Twitch</a>
+
+            <div class="info-section">
+                <h1>Mis otros canales</h1>
+                <h1>^^</h1>
+                <p class="description">Hago más contenido aparte de Warframe</p>
             </div>
-            <a href="https://www.facebook.com/people/Konekt4/61577115692439/" target="_blank" rel="noopener noreferrer" class="btn facebook"><img src="img/Facebook.png" alt="Facebook" class="btn-icon">Facebook</a>
-            <a href="https://x.com/Konekt4" target="_blank" rel="noopener noreferrer" class="btn twitter"><img src="img/X.png" alt="X" class="btn-icon">X</a>
-            <a href="mailto:konekt4.contacto@gmail.com" class="btn contacto">Contacto / Correo</a>
+
+            <div class="links-section">
+                <a href="https://www.youtube.com/@konekt4.9" target="_blank" rel="noopener noreferrer" class="btn youtube deadlock"><img src="img/Youtube.png" alt="YouTube" class="btn-icon">konekt5 (Deadlock)</a>
+                <a href="https://www.youtube.com/@konekonekt4" target="_blank" rel="noopener noreferrer" class="btn youtube"><img src="img/Youtube.png" alt="YouTube" class="btn-icon">konekone (Variedad)</a>
+            </div>
         </div>
 
+        <div class="card-container main-panel">
+            <div class="profile-circle">
+                <img src="img/Logo.png" alt="Rupy" class="oc-image">
+            </div>
+
+            <div class="info-section">
+                <h1>Mis redes</h1>
+                <h1>^^</h1>
+                <p class="description">Hago videos sobre Warframe y me dicen Waldo</p>
+            </div>
+
+            <div class="links-section">
+                <a href="https://discord.gg/s8keXGdTkq" target="_blank" rel="noopener noreferrer" class="btn discord"><img src="img/Discord.png" alt="Discord" class="btn-icon">Discord</a>
+                <div class="youtube-row">
+                    <a href="https://www.youtube.com/@konekt4" target="_blank" rel="noopener noreferrer" class="btn youtube"><img src="img/Youtube.png" alt="YouTube" class="btn-icon">YouTube</a>
+                    <a id="youtube-status" class="youtube-status loading" href="https://www.youtube.com/@konekt4/videos" target="_blank" rel="noopener noreferrer"><span class="youtube-status-meta">Cargando<br>--</span><span class="youtube-status-title">Buscando video...</span></a>
+                </div>
+                <a href="https://www.tiktok.com/@konekt4" target="_blank" rel="noopener noreferrer" class="btn tiktok"><img src="img/TikTok.png" alt="TikTok" class="btn-icon">TikTok</a>
+                <a href="https://www.instagram.com/konekt.4/" target="_blank" rel="noopener noreferrer" class="btn instagram"><img src="img/Instagram.png" alt="Instagram" class="btn-icon">Instagram</a>
+                <div class="twitch-row">
+                    <span id="twitch-schedule" class="twitch-schedule loading"><span class="twitch-schedule-meta">Martes</span><span class="twitch-schedule-time">9:00 pm - 10:30 pm (Mexico)</span></span>
+                    <a href="https://www.twitch.tv/konekt4" target="_blank" rel="noopener noreferrer" class="btn twitch"><img src="img/Twitch.png" alt="Twitch" class="btn-icon">Twitch</a>
+                </div>
+                <a href="https://www.facebook.com/people/Konekt4/61577115692439/" target="_blank" rel="noopener noreferrer" class="btn facebook"><img src="img/Facebook.png" alt="Facebook" class="btn-icon">Facebook</a>
+                <a href="https://x.com/Konekt4" target="_blank" rel="noopener noreferrer" class="btn twitter"><img src="img/X.png" alt="X" class="btn-icon">X</a>
+                <a href="mailto:konekt4.contacto@gmail.com" class="btn contacto">Contacto / Correo</a>
+            </div>
+
+        </div>
+
+        <div class="panel-stack-hint">¡Click aquí!</div>
     </div>
 
     <script src="js/youtube-status.js" defer></script>
     <script src="js/twitch-schedule.js" defer></script>
+    <script src="js/panel-focus.js" defer></script>
 
 </body>
 </html>
