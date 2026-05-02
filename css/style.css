@@ -507,14 +507,16 @@ body::before {
 
 @media (max-width: 560px) {
     .panel-stack-hint {
-        position: fixed;
-        right: max(0px, env(safe-area-inset-right));
-        top: 50%;
-        transform: translateY(-50%);
+        position: absolute;
+        right: 12px;
+        top: 18px;
+        transform: none;
+        writing-mode: horizontal-tb;
+        text-orientation: initial;
         font-size: 15px;
         padding: 8px 10px;
         border-radius: 10px;
-        z-index: 999;
+        z-index: 5;
     }
 
     .youtube-row {
