@@ -65,7 +65,7 @@ body::before {
     padding-top: 80px;
     width: 100%;
     max-width: 500px;
-    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: none;
     position: relative;
     transition: none;
 }
@@ -76,9 +76,9 @@ body::before {
     left: 38px;
     width: 100%;
     min-height: 620px;
-    background: linear-gradient(180deg, #d8d8d8 0%, #bdbdbd 100%);
+    background: #c9c9c9;
     opacity: 0.95;
-    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: none;
     z-index: 0;
 }
 
@@ -128,24 +128,50 @@ body::before {
     pointer-events: none;
 }
 
+.panel-stack:not(.is-secondary-active) .back-panel .btn,
+.panel-stack:not(.is-secondary-active) .back-panel .youtube-status,
+.panel-stack:not(.is-secondary-active) .back-panel .twitch-schedule {
+    filter: brightness(0.82) saturate(0.78);
+}
+
+.panel-stack:not(.is-secondary-active) .back-panel .btn:hover,
+.panel-stack:not(.is-secondary-active) .back-panel .youtube-status:hover,
+.panel-stack:not(.is-secondary-active) .back-panel .twitch-schedule:hover {
+    filter: brightness(0.82) saturate(0.78);
+    box-shadow: none;
+}
+
 .panel-stack.is-secondary-active .back-panel {
     top: 0;
     left: 0;
     background: #ffffff;
     opacity: 1;
     z-index: 2;
-    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: none;
     cursor: default;
 }
 
 .panel-stack.is-secondary-active .main-panel {
     top: 18px;
     left: 38px;
-    background: linear-gradient(180deg, #d8d8d8 0%, #bdbdbd 100%);
+    background: #c9c9c9;
     opacity: 0.95;
     z-index: 1;
-    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: none;
     cursor: pointer;
+}
+
+.panel-stack.is-secondary-active .main-panel .btn,
+.panel-stack.is-secondary-active .main-panel .youtube-status,
+.panel-stack.is-secondary-active .main-panel .twitch-schedule {
+    filter: brightness(0.82) saturate(0.78);
+}
+
+.panel-stack.is-secondary-active .main-panel .btn:hover,
+.panel-stack.is-secondary-active .main-panel .youtube-status:hover,
+.panel-stack.is-secondary-active .main-panel .twitch-schedule:hover {
+    filter: brightness(0.82) saturate(0.78);
+    box-shadow: none;
 }
 
 .panel-stack.is-secondary-active .main-panel a,
@@ -480,6 +506,14 @@ body::before {
 }
 
 @media (max-width: 560px) {
+    .panel-stack-hint {
+        right: 0;
+        top: 42%;
+        font-size: 15px;
+        padding: 8px 10px;
+        border-radius: 10px;
+    }
+
     .youtube-row {
         grid-template-columns: 1fr;
     }
