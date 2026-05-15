@@ -358,6 +358,12 @@ body::before {
     filter: brightness(0) saturate(100%);
 }
 
+.youtube-status.deadlock {
+    background: #efdebf;
+    border-color: #efdebf;
+    color: #333333;
+}
+
 .youtube-status {
     --status-meta-size: clamp(9px, 1.8vw, 11px);
     --status-title-size: clamp(10px, 2vw, 12px);
