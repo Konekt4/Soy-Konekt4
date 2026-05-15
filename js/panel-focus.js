@@ -8,45 +8,33 @@
         return;
     }
 
-    function setActivePanel(isSecondaryActive) {
-        panelStack.classList.toggle('is-secondary-active', isSecondaryActive);
+    function getOtherPage() {
+        const path = window.location.pathname || '';
+        const pageName = path.substring(path.lastIndexOf('/') + 1).toLowerCase();
+
+        if (pageName === 'index.html') return 'konekt5.html';
+        if (pageName === 'konekt5.html') return 'index.html';
+        if (pageName === 'konekt4.html') return 'konekt5.html';
+        return 'konekt5.html';
     }
 
-    function showSecondaryPanel() {
-        setActivePanel(true);
-    }
-
-    function showPrimaryPanel() {
-        setActivePanel(false);
-    }
-
-    function togglePanelFocus() {
-        const isSecondaryActive = panelStack.classList.contains('is-secondary-active');
-        setActivePanel(!isSecondaryActive);
-    }
-
-    function handleHintClick(event) {
-        event.stopPropagation();
-        togglePanelFocus();
-    }
-
-    function syncClickablePanel() {
-        backPanel.removeEventListener('click', showSecondaryPanel);
-        mainPanel.removeEventListener('click', showPrimaryPanel);
-
-        if (panelStack.classList.contains('is-secondary-active')) {
-            mainPanel.addEventListener('click', showPrimaryPanel);
-        } else {
-            backPanel.addEventListener('click', showSecondaryPanel);
+    function navigateToOtherPage(event) {
+        if (event) {
+            const clickedLink = event.target && event.target.closest('a');
+            if (clickedLink) {
+                return;
+            }
+            event.stopPropagation();
         }
+
+        window.location.href = getOtherPage();
     }
 
-    syncClickablePanel();
+    const isSecondaryActive = panelStack.classList.contains('is-secondary-active');
+    const secondaryPanel = isSecondaryActive ? mainPanel : backPanel;
+    secondaryPanel.addEventListener('click', navigateToOtherPage);
 
     if (panelStackHint) {
-        panelStackHint.addEventListener('click', handleHintClick);
+        panelStackHint.addEventListener('click', navigateToOtherPage);
     }
-
-    const observer = new MutationObserver(syncClickablePanel);
-    observer.observe(panelStack, { attributes: true, attributeFilter: ['class'] });
 })();
