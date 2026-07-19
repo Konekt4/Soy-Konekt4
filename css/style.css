@@ -254,6 +254,13 @@ body::before {
     align-items: stretch;
 }
 
+.facebook-row {
+    display: grid;
+    grid-template-columns: minmax(180px, 210px) minmax(0, 1fr);
+    gap: 10px;
+    align-items: stretch;
+}
+
 .youtube-row .btn.youtube {
     width: 100%;
     min-width: 180px;
@@ -262,6 +269,29 @@ body::before {
 .twitch-row .btn.twitch {
     width: 100%;
     min-width: 180px;
+}
+
+.facebook-row .btn.facebook {
+    width: 100%;
+    min-width: 180px;
+}
+
+.btn.facebook-group {
+    background: #ffffff;
+    border-color: #1877f2;
+    color: #1877f2;
+    font-size: 14px;
+    padding: 16px 12px;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1;
+}
+
+.btn.facebook-group:hover {
+    color: #1877f2;
+    box-shadow: 0 0 22px rgba(24, 119, 242, 0.25), 0 10px 40px 0 rgba(0, 0, 0, 0.25);
 }
 
 .btn {
