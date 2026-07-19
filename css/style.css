@@ -358,6 +358,21 @@ body::before {
     filter: brightness(0) saturate(100%);
 }
 
+.btn.temu {
+    background: #ffffff;
+    border-color: #FB7701;
+    color: #FB7701;
+}
+
+.btn.temu .btn-icon {
+    filter: none;
+}
+
+.btn.temu:hover {
+    color: #FB7701;
+    box-shadow: 0 0 25px rgba(255, 183, 77, 0.35), 0 10px 40px 0 rgba(0, 0, 0, 0.25);
+}
+
 .youtube-status.deadlock {
     background: #efdebf;
     border-color: #efdebf;
