@@ -612,6 +612,10 @@ body::before {
         grid-template-columns: 1fr;
     }
 
+    .facebook-row {
+        grid-template-columns: 1fr;
+    }
+
     .youtube-status {
         width: 100%;
         min-width: 0;
@@ -622,5 +626,18 @@ body::before {
         width: 100%;
         min-width: 0;
         grid-template-columns: minmax(96px, auto) minmax(0, 1fr);
+    }
+
+    .facebook-row .btn.facebook,
+    .btn.facebook-group {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .btn.facebook-group {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        line-height: 1.15;
     }
 }
